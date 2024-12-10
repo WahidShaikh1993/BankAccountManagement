@@ -56,7 +56,7 @@ namespace BankAccountManagement.Repositories
                     {
                         AccountID = reader.GetInt32(0),
                         AccountHolderName = reader.GetString(1),
-                        Balance = reader.GetInt32(2),
+                        Balance = reader.GetDecimal(2),
                         AccountType = reader.GetString(3),
                         CreatedDate = reader.GetDateTime(4),
                     };

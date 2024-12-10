@@ -53,7 +53,7 @@ namespace BankAccountManagement.Repositories
                     {
                         TransactionID = reader.GetInt32(0),
                         AccountID = reader.GetInt32(1),
-                        Amount = reader.GetInt32(2),
+                        Amount = reader.GetDecimal(2),
                         TransactionType = reader.GetString(3),
                         TransactionDate = reader.GetDateTime(4),
                     };
