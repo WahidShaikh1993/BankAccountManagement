@@ -82,6 +82,23 @@ namespace BankAccountManagement.Repositories
             }
         }
 
+        public bool DeleteAccountBal(int accountID)
+        {
+            using (SqlConnection connection = new SqlConnection(_connectionString)) 
+            
+            {
+                string query = "Delete From Accounts Where AccountID = @AccountID";
+
+                SqlCommand command = new SqlCommand(query,connection);
+                command.Parameters.AddWithValue("@AccountID", accountID);
+
+                connection.Open();
+                int rowAffected = command.ExecuteNonQuery(); 
+                return rowAffected > 0;
+            }
+
+        }
 
     }
+
 }
